@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    Layout chính của màn hình quản lý sinh viên
+    Cấu trúc:
+    - 2 EditText để nhập MSSV và tên
+    - 2 Button để thêm mới và cập nhật sinh viên
+    - RecyclerView để hiển thị danh sách sinh viên
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,6 +16,7 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
+    <!-- Input field cho mã số sinh viên -->
     <EditText
         android:id="@+id/etMSSV"
         android:layout_width="match_parent"
@@ -16,6 +24,7 @@
         android:hint="Mã số sinh viên"
         android:inputType="text" />
 
+    <!-- Input field cho họ tên sinh viên -->
     <EditText
         android:id="@+id/etName"
         android:layout_width="match_parent"
@@ -23,6 +32,7 @@
         android:hint="Họ tên"
         android:inputType="textPersonName" />
 
+    <!-- Container chứa các button Add và Update, căn về bên phải -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,6 +40,7 @@
         android:orientation="horizontal"
         android:layout_marginTop="8dp">
 
+        <!-- Button thêm sinh viên mới -->
         <Button
             android:id="@+id/btnAdd"
             android:layout_width="wrap_content"
@@ -37,6 +48,7 @@
             android:text="Add"
             android:layout_marginEnd="8dp"/>
 
+        <!-- Button cập nhật thông tin sinh viên đã chọn -->
         <Button
             android:id="@+id/btnUpdate"
             android:layout_width="wrap_content"
@@ -44,6 +56,8 @@
             android:text="Update" />
     </LinearLayout>
 
+    <!-- RecyclerView hiển thị danh sách sinh viên
+         Sử dụng layout_weight để chiếm toàn bộ không gian còn lại -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvStudents"
         android:layout_width="match_parent"

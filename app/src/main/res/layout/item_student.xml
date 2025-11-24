@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    Layout cho một item sinh viên trong RecyclerView
+    Cấu trúc:
+    - Phần bên trái: Hiển thị tên và MSSV của sinh viên
+    - Phần bên phải: Nút xóa sinh viên
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -6,12 +12,15 @@
     android:padding="16dp"
     android:gravity="center_vertical">
 
+    <!-- Container chứa thông tin sinh viên (tên và MSSV) 
+         Sử dụng layout_weight để chiếm toàn bộ không gian còn lại -->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical">
 
+        <!-- TextView hiển thị tên sinh viên với font đậm -->
         <TextView
             android:id="@+id/tvName"
             android:layout_width="wrap_content"
@@ -20,6 +29,7 @@
             android:textStyle="bold"
             android:text="Student Name" />
 
+        <!-- TextView hiển thị mã số sinh viên -->
         <TextView
             android:id="@+id/tvMSSV"
             android:layout_width="wrap_content"
@@ -29,6 +39,8 @@
             android:layout_marginTop="4dp"/>
     </LinearLayout>
 
+    <!-- Button xóa sinh viên 
+         Sử dụng icon delete của Android và hiệu ứng ripple khi click -->
     <ImageButton
         android:id="@+id/btnDelete"
         android:layout_width="wrap_content"
